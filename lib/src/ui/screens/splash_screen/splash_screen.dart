@@ -63,7 +63,7 @@ class HomeWidget extends StatelessWidget {
           width: 200,
           child: FlatButton(
             onPressed: () {
-              Navigator.pushNamed(context, LoginScreen.route);
+              Navigator.pushReplacementNamed(context, LoginScreen.route);
             },
             child: Text('Login'),
             color: Color(0xff1C00CE),
@@ -78,6 +78,7 @@ class HomeWidget extends StatelessWidget {
             child: Text('Sign Up'),
             textColor: Color(0xffffffff),
             borderSide: BorderSide(color: Color(0xffffffff)),
+            highlightedBorderColor: Colors.white,
             shape: StadiumBorder(),
           ),
         ),

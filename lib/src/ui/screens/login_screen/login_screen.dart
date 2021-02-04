@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -124,7 +125,8 @@ class LoginScreen extends StatelessWidget {
                                 child: FlatButton(
                                   onPressed: () {
                                     FocusScope.of(context).unfocus();
-                                    print('login');
+                                    Navigator.pushReplacementNamed(
+                                        context, HomeScreen.route);
                                   },
                                   child: Text('Login'),
                                   color: Color(0xff1C00CE),

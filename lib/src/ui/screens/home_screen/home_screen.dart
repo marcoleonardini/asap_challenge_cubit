@@ -1,10 +1,9 @@
+import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/result_listwiew_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:asap_challenge_cubit/src/ui/widgets/drawers/main_menu_drawer.dart';
 import 'package:asap_challenge_cubit/src/ui/widgets/no_result_list_view.dart';
-
-import 'package:asap_challenge_cubit/src/core/providers/cubit.dart';
 
 ValueNotifier typeOrders = ValueNotifier('active');
 
@@ -25,7 +24,10 @@ class HomeScreen extends StatelessWidget {
         child: RefreshIndicator(
           onRefresh: () async {
             await Future.delayed(const Duration(milliseconds: 1500));
-            context.read<CounterCubit>().increment();
+            if (typeOrders.value == 'active')
+              context.read<OrderProvider>().getActiveOrders();
+            if (typeOrders.value == 'past')
+              context.read<OrderProvider>().getPastOrders();
             print('refreshing');
 
             return Future.value(true);
@@ -53,6 +55,7 @@ class HomeScreen extends StatelessWidget {
                         return GestureDetector(
                           onTap: () {
                             typeOrders.value = 'active';
+                            context.read<OrderProvider>().getActiveOrders();
                           },
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 250),
@@ -88,7 +91,10 @@ class HomeScreen extends StatelessWidget {
                       builder: (context, value, _) {
                         return GestureDetector(
                           onTap: () {
-                            typeOrders.value = 'past';
+                            if (typeOrders.value != 'past') {
+                              typeOrders.value = 'past';
+                              context.read<OrderProvider>().getPastOrders();
+                            }
                           },
                           child: AnimatedContainer(
                             duration: const Duration(milliseconds: 250),
@@ -123,17 +129,16 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: BlocBuilder<CounterCubit, int>(
-                  // cubit: CounterCubit(),
+                child: BlocBuilder<OrderProvider, List>(
                   builder: (context, state) {
                     print(state);
                     return AnimatedSwitcher(
                       duration: const Duration(milliseconds: 450),
-                      child: state < 3
+                      child: state.isEmpty
                           ? NoResultsListView()
                           : ResultsListViewWidget(
                               key: UniqueKey(),
-                              state: state,
+                              listOrders: state,
                             ),
                     );
                   },

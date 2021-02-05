@@ -78,6 +78,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     await Future.delayed(const Duration(milliseconds: 500));
     if (FirebaseAuth.instance.currentUser != null) {
       setState(() {
+        email = FirebaseAuth.instance.currentUser.email;
         opacity = 1;
         islogged = true;
       });
@@ -112,14 +113,16 @@ class WelcomeBackLabel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           const Text(
             'Welcome back!',
-            style: TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: 14.0),
           ),
+          SizedBox(height: 8.0),
           Text(
             email,
-            style: TextStyle(fontSize: 24.0),
+            style: TextStyle(fontSize: 18.0),
           ),
         ],
       ),

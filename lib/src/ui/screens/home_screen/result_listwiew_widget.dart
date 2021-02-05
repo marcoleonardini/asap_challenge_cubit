@@ -1,10 +1,11 @@
+import 'package:asap_challenge_cubit/src/core/models/order.model.dart';
 import 'package:flutter/material.dart';
 
 class ResultsListViewWidget extends StatelessWidget {
-  final int state;
+  final List listOrders;
   const ResultsListViewWidget({
     Key key,
-    this.state,
+    this.listOrders,
   }) : super(key: key);
 
   @override
@@ -15,8 +16,9 @@ class ResultsListViewWidget extends StatelessWidget {
         separatorBuilder: (_, __) => Divider(
           color: Colors.white,
         ),
-        itemCount: state,
+        itemCount: listOrders.length,
         itemBuilder: (context, index) {
+          final OrderModel order = listOrders[index];
           return Padding(
             padding: EdgeInsets.symmetric(vertical: 12.0),
             child: Stack(
@@ -32,7 +34,7 @@ class ResultsListViewWidget extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  'Sergei Plotnikoff',
+                                  order.name,
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w300,
@@ -52,7 +54,7 @@ class ResultsListViewWidget extends StatelessWidget {
                           FlatButton(
                             onPressed: () {},
                             child: Text(
-                              'Accepted',
+                              order.status,
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
                               ),

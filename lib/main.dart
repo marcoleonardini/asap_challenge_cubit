@@ -1,4 +1,4 @@
-import 'package:asap_challenge_cubit/src/core/providers/cubit.dart';
+import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:asap_challenge_cubit/src/core/config/routes.dart';
@@ -15,8 +15,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CounterCubit>(
-      create: (_) => CounterCubit(),
+    return BlocProvider<OrderProvider>(
+      create: (_) => OrderProvider(),
       child: MaterialApp(
         title: 'ASAP Challenge',
         debugShowCheckedModeBanner: false,

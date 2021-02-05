@@ -1,4 +1,4 @@
-import 'package:asap_challenge_cubit/src/core/services/abstract/auth.abstract.dart';
+import 'package:asap_challenge_cubit/src/core/services/abstract/auth_abstract.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthFirebase implements AuthAbstract {

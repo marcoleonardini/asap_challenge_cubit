@@ -1,4 +1,6 @@
+import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -38,10 +40,7 @@ class SplasScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: HomeWidget(),
-              )
+              Expanded(flex: 2, child: HomeWidget())
             ],
           ),
         ),
@@ -50,8 +49,86 @@ class SplasScreen extends StatelessWidget {
   }
 }
 
-class HomeWidget extends StatelessWidget {
+class HomeWidget extends StatefulWidget {
   const HomeWidget({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  _HomeWidgetState createState() => _HomeWidgetState();
+}
+
+class _HomeWidgetState extends State<HomeWidget> {
+  double opacity = 0.0;
+  bool islogged = false;
+
+  String email = '';
+
+  @override
+  void initState() {
+    super.initState();
+    init();
+  }
+
+  void init() async {
+    await isLoggedIn(context);
+  }
+
+  Future<void> isLoggedIn(context) async {
+    await Future.delayed(const Duration(milliseconds: 500));
+    if (FirebaseAuth.instance.currentUser != null) {
+      setState(() {
+        opacity = 1;
+        islogged = true;
+      });
+      await Future.delayed(const Duration(milliseconds: 1500));
+      return Navigator.of(context).pushReplacementNamed(HomeScreen.route);
+    }
+    setState(() {
+      opacity = 1;
+    });
+    return;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedOpacity(
+      opacity: opacity,
+      duration: const Duration(milliseconds: 500),
+      child: islogged
+          ? WelcomeBackLabel(
+              email: email,
+            )
+          : ButtonsWidget(),
+    );
+  }
+}
+
+class WelcomeBackLabel extends StatelessWidget {
+  final String email;
+
+  const WelcomeBackLabel({Key key, this.email}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: [
+          const Text(
+            'Welcome back!',
+            style: TextStyle(fontSize: 24.0),
+          ),
+          Text(
+            email,
+            style: TextStyle(fontSize: 24.0),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ButtonsWidget extends StatelessWidget {
+  const ButtonsWidget({
     Key key,
   }) : super(key: key);
 

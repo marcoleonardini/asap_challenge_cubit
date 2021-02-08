@@ -23,7 +23,7 @@ class AuthFirebase implements AuthAbstract {
   }
 
   @override
-  Future<bool> signUp(String email, String password) async {
+  Future<bool> signUp({String email, String password}) async {
     try {
       FirebaseAuth auth = FirebaseAuth.instance;
 

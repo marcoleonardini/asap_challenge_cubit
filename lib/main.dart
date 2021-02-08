@@ -23,11 +23,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
           buttonTheme: ButtonThemeData(
-            buttonColor: Colors.white, //  <-- dark color
+            buttonColor: Colors.black, //  <-- dark color
             textTheme: ButtonTextTheme
                 .primary, //  <-- this auto selects the right color
           ),
-          iconTheme: IconThemeData(color: Colors.white),
+          iconTheme: IconThemeData(color: Colors.white70),
+          textButtonTheme: TextButtonThemeData(
+            style: TextButton.styleFrom(primary: Colors.white70),
+          ),
           textTheme: TextTheme(
             bodyText1: TextStyle(),
             bodyText2: TextStyle(),
@@ -35,9 +38,10 @@ class MyApp extends StatelessWidget {
             headline3: TextStyle(),
             headline6: TextStyle(),
             subtitle1: TextStyle(),
+            subtitle2: TextStyle(),
           ).apply(
-            bodyColor: Colors.white,
-            displayColor: Colors.white,
+            bodyColor: Colors.white70,
+            displayColor: Colors.white70,
           ),
         ),
         initialRoute: SplasScreen.route,

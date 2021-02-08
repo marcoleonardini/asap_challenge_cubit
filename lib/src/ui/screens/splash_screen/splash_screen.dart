@@ -147,7 +147,6 @@ class ButtonsWidget extends StatelessWidget {
             },
             child: Text('Login'),
             color: Color(0xff1C00CE),
-            textColor: Colors.white,
             shape: StadiumBorder(),
           ),
         ),

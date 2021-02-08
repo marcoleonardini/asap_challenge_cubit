@@ -23,7 +23,6 @@ class NoResultsListView extends StatelessWidget {
         // SizedBox(height: 12.0),
         Icon(
           Icons.refresh,
-          color: Colors.white,
           size: 16.0,
         ),
         Text(

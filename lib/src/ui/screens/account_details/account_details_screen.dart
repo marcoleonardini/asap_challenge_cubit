@@ -27,14 +27,28 @@ class AccountDetailsScreen extends StatelessWidget {
                 children: [
                   CustomFilledTextField(
                     text: '+1987898967489',
+                    suffixIcon: Icon(
+                      Icons.edit,
+                      color: Colors.white70,
+                    ),
                   ),
-                  Row(
-                    children: [
-                      Text('Personal Info'),
-                      Icon(Icons.edit),
-                    ],
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 16.0, horizontal: 12),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Personal Info',
+                          style: TextStyle(fontSize: 18.0),
+                        ),
+                        Icon(Icons.edit),
+                      ],
+                    ),
                   ),
-                  CustomFilledTextField(text: 'Supermercado Rey'),
+                  CustomFilledTextField(
+                    text: 'Supermercado Rey',
+                  ),
                   CustomFilledTextField(text: 'Supermercado Rey'),
                   CustomFilledTextField(text: 'Costadelestedelivery@gmail.com'),
                   Row(
@@ -50,9 +64,7 @@ class AccountDetailsScreen extends StatelessWidget {
                         onPressed: () {},
                         child: Text(
                           'Logout',
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(),
                         ),
                         style: OutlinedButton.styleFrom(
                           shape: StadiumBorder(),
@@ -74,13 +86,30 @@ class AccountDetailsScreen extends StatelessWidget {
 
 class CustomFilledTextField extends StatelessWidget {
   final String text;
+  final Widget _suffixIcon;
+
   const CustomFilledTextField({
     Key key,
+    Widget suffixIcon,
     @required this.text,
-  }) : super(key: key);
+  })  : _suffixIcon = suffixIcon,
+        super(key: key);
+
+  const CustomFilledTextField.noSuffixIcon({
+    Key key,
+    Widget suffixIcon,
+    @required this.text,
+  })  : _suffixIcon = null,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var outlineInputBorderColor = OutlineInputBorder(
+      borderRadius: BorderRadius.circular(64.0),
+      borderSide: BorderSide(
+        color: Color(0xff391B91),
+      ),
+    );
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 8.0),
       child: TextField(
@@ -90,28 +119,10 @@ class CustomFilledTextField extends StatelessWidget {
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 24.0),
           fillColor: Color(0xff391B91),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(64.0),
-            borderSide: BorderSide(
-              color: Color(0xff391B91),
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(64.0),
-            borderSide: BorderSide(
-              color: Color(0xff391B91),
-            ),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(64.0),
-            borderSide: BorderSide(
-              color: Color(0xff391B91),
-            ),
-          ),
-          suffixIcon: Icon(
-            Icons.edit,
-            color: Colors.white,
-          ),
+          border: outlineInputBorderColor,
+          enabledBorder: outlineInputBorderColor,
+          focusedBorder: outlineInputBorderColor,
+          suffixIcon: _suffixIcon ?? SizedBox.shrink(),
           filled: true,
         ),
       ),

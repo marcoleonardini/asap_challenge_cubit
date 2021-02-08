@@ -38,6 +38,7 @@ class ResultsListViewWidget extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 18.0,
                                     fontWeight: FontWeight.w300,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(height: 4.0),
@@ -46,6 +47,7 @@ class ResultsListViewWidget extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 12.0,
                                     fontWeight: FontWeight.w300,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -57,10 +59,10 @@ class ResultsListViewWidget extends StatelessWidget {
                               order.status,
                               style: TextStyle(
                                 fontWeight: FontWeight.w300,
+                                color: Colors.white,
                               ),
                             ),
                             color: Color(0xff1C00CE),
-                            textColor: Colors.white,
                             shape: StadiumBorder(),
                           ),
                         ],
@@ -76,6 +78,7 @@ class ResultsListViewWidget extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w300,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 SizedBox(height: 4.0),
@@ -84,6 +87,7 @@ class ResultsListViewWidget extends StatelessWidget {
                                   style: TextStyle(
                                     fontSize: 16.0,
                                     fontWeight: FontWeight.w300,
+                                    color: Colors.white,
                                   ),
                                 ),
                               ],
@@ -112,6 +116,7 @@ class ResultsListViewWidget extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16.0,
                             fontWeight: FontWeight.w300,
+                            color: Colors.white,
                           ),
                           children: [
                             TextSpan(

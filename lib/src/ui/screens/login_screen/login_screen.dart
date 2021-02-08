@@ -69,24 +69,33 @@ class LoginScreen extends StatelessWidget {
                                       width: 250,
                                       child: TextFormField(
                                         onSaved: (value) => email = value,
-                                        style: TextStyle(color: Colors.white),
                                         cursorColor: Colors.grey,
                                         decoration: InputDecoration(
-                                          focusColor: Colors.white,
+                                          focusColor: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1
+                                              .color,
                                           labelText: 'Email / mobile number',
                                           labelStyle: TextStyle(
-                                            color:
-                                                Colors.white.withOpacity(0.9),
+                                            color: Theme.of(context)
+                                                .textTheme
+                                                .bodyText1
+                                                .color,
                                           ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color:
-                                                  Colors.white.withOpacity(0.9),
+                                              color: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText1
+                                                  .color,
                                             ),
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: Colors.white,
+                                              color: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText1
+                                                  .color,
                                             ),
                                           ),
                                         ),
@@ -99,24 +108,36 @@ class LoginScreen extends StatelessWidget {
                                       width: 250,
                                       child: TextFormField(
                                         onSaved: (value) => password = value,
-                                        style: TextStyle(color: Colors.white),
+                                        style: TextStyle(
+                                          color: Theme.of(context)
+                                              .textTheme
+                                              .bodyText1
+                                              .color,
+                                        ),
                                         cursorColor: Colors.grey,
                                         obscureText: true,
                                         decoration: InputDecoration(
                                           labelText: 'Password',
                                           labelStyle: TextStyle(
-                                            color:
-                                                Colors.white.withOpacity(0.9),
+                                            color: Theme.of(context)
+                                                .textTheme
+                                                .bodyText1
+                                                .color,
                                           ),
                                           enabledBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color:
-                                                  Colors.white.withOpacity(0.9),
+                                              color: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText1
+                                                  .color,
                                             ),
                                           ),
                                           focusedBorder: UnderlineInputBorder(
                                             borderSide: BorderSide(
-                                              color: Colors.white,
+                                              color: Theme.of(context)
+                                                  .textTheme
+                                                  .bodyText1
+                                                  .color,
                                             ),
                                           ),
                                         ),

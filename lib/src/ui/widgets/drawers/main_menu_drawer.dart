@@ -1,6 +1,4 @@
 import 'package:asap_challenge_cubit/src/ui/screens/account_details/account_details_screen.dart';
-import 'package:asap_challenge_cubit/src/ui/screens/splash_screen/splash_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +52,7 @@ class MainMenuDrawer extends StatelessWidget {
                     Navigator.pushNamed(context, AccountDetailsScreen.route);
                   },
                   child: CircleAvatar(
-                    child: Icon(Icons.person),
+                    backgroundImage: AssetImage('assets/images/woman.jpeg'),
                   ),
                 ),
               ],

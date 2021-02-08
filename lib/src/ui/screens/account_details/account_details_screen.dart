@@ -1,4 +1,5 @@
-import 'package:asap_challenge_cubit/src/ui/screens/splash_screen/splash_screen.dart';
+import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -65,12 +66,15 @@ class AccountDetailsScreen extends StatelessWidget {
                       OutlinedButton(
                         onPressed: () async {
                           await FirebaseAuth.instance.signOut();
-                          Navigator.pushReplacementNamed(
-                              context, SplasScreen.route);
+                          Navigator.pushNamedAndRemoveUntil(
+                            context,
+                            LoginScreen.route,
+                            ModalRoute.withName(LoginScreen.route),
+                          );
                         },
                         child: Text(
                           'Logout',
-                          style: TextStyle(),
+                          style: TextStyle(color: Colors.white),
                         ),
                         style: OutlinedButton.styleFrom(
                           shape: StadiumBorder(),
@@ -121,7 +125,6 @@ class CustomFilledTextField extends StatelessWidget {
       child: TextField(
         controller: TextEditingController(text: text),
         cursorColor: Colors.white,
-        // TODO: Extract InputDecorations
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 24.0),
           fillColor: Color(0xff391B91),

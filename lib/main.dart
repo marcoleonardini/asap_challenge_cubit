@@ -27,12 +27,14 @@ class MyApp extends StatelessWidget {
             textTheme: ButtonTextTheme
                 .primary, //  <-- this auto selects the right color
           ),
+          iconTheme: IconThemeData(color: Colors.white),
           textTheme: TextTheme(
             bodyText1: TextStyle(),
             bodyText2: TextStyle(),
             headline2: TextStyle(),
             headline3: TextStyle(),
             headline6: TextStyle(),
+            subtitle1: TextStyle(),
           ).apply(
             bodyColor: Colors.white,
             displayColor: Colors.white,

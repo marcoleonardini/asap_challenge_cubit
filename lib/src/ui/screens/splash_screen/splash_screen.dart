@@ -153,13 +153,19 @@ class ButtonsWidget extends StatelessWidget {
         ),
         SizedBox(
           width: 200,
-          child: OutlineButton(
+          child: OutlinedButton(
+            style: OutlinedButton.styleFrom(
+              shape: StadiumBorder(),
+              side: BorderSide(color: Color(0xffffffff)),
+            ),
+
+            // highlightedBorderColor: Colors.white,
             onPressed: () {},
-            child: Text('Sign Up'),
-            textColor: Color(0xffffffff),
-            borderSide: BorderSide(color: Color(0xffffffff)),
-            highlightedBorderColor: Colors.white,
-            shape: StadiumBorder(),
+            child: Text(
+              'Sign Up',
+              style: TextStyle(color: Colors.white),
+            ),
+            //textColor: Color(0xffffffff),
           ),
         ),
       ],

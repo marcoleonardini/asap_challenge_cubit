@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/ui/screens/account_details/account_details_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/splash_screen/splash_screen.dart';
@@ -13,6 +14,8 @@ class AppRoute {
         return MaterialPageRoute(builder: (context) => LoginScreen());
       case HomeScreen.route:
         return MaterialPageRoute(builder: (context) => HomeScreen());
+      case AccountDetailsScreen.route:
+        return MaterialPageRoute(builder: (context) => AccountDetailsScreen());
 
       default:
         return MaterialPageRoute(builder: (context) => NoRouteScreen());

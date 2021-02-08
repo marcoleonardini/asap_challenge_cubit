@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "186096405556",
+    "firebase_url": "https://aurora-fruit.firebaseio.com",
+    "project_id": "aurora-fruit",
+    "storage_bucket": "aurora-fruit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186096405556:android:f02beaf77076974635ce61",
+        "android_client_info": {
+          "package_name": "com.example.asap_challenge_cubit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186096405556-lcvt7auq0ukobo5cvjqc116f8btqm9nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASc7L5Ls7F0Lmuo1ZZDhP-pjEg5kFvge8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186096405556-lcvt7auq0ukobo5cvjqc116f8btqm9nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:186096405556:android:0b93e32b85d2134935ce61",
+        "android_client_info": {
+          "package_name": "com.example.flutter_face_recognition"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "186096405556-lcvt7auq0ukobo5cvjqc116f8btqm9nr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASc7L5Ls7F0Lmuo1ZZDhP-pjEg5kFvge8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "186096405556-lcvt7auq0ukobo5cvjqc116f8btqm9nr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

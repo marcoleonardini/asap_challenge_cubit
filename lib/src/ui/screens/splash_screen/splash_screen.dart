@@ -1,5 +1,6 @@
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
+import 'package:asap_challenge_cubit/src/ui/utils/custom_linear_gradient.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,13 +15,7 @@ class SplasScreen extends StatelessWidget {
         body: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Color(0xff170146), Color(0xff1500A7)],
-              end: Alignment.bottomCenter,
-              begin: Alignment.topCenter,
-            ),
-          ),
+          decoration: AppLinearGradient.customBoxDecoration(),
           child: Column(
             // mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [

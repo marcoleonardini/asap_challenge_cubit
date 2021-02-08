@@ -6,7 +6,6 @@ class AuthFirebase implements AuthAbstract {
   Future<bool> logIn({String email, String password}) async {
     try {
       FirebaseAuth auth = FirebaseAuth.instance;
-      print(auth.currentUser);
 
       await auth.signInWithEmailAndPassword(
         email: email,
@@ -27,7 +26,6 @@ class AuthFirebase implements AuthAbstract {
   Future<bool> signUp(String email, String password) async {
     try {
       FirebaseAuth auth = FirebaseAuth.instance;
-      print(auth.currentUser);
 
       await auth.createUserWithEmailAndPassword(
         email: email,

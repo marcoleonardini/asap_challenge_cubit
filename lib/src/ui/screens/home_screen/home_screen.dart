@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
               context.read<OrderProvider>().getActiveOrders();
             if (typeOrders.value == 'past')
               context.read<OrderProvider>().getPastOrders();
-            print('refreshing');
 
             return Future.value(true);
           },
@@ -131,7 +130,6 @@ class HomeScreen extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<OrderProvider, List>(
                   builder: (context, state) {
-                    print(state);
                     return AnimatedSwitcher(
                       duration: const Duration(milliseconds: 450),
                       child: state.isEmpty

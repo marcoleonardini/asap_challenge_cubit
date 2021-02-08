@@ -162,12 +162,11 @@ class LoginScreen extends StatelessWidget {
 
                               SizedBox(
                                 width: 200,
-                                child: FlatButton(
+                                child: RaisedButton(
                                   onPressed: () async {
                                     FocusScope.of(context).unfocus();
                                     _form.currentState.save();
                                     if (_form.currentState.validate()) {
-                                      print(_form.currentState.toString());
                                       if (await AuthFirebase().logIn(
                                         email: email,
                                         password: password,
@@ -177,8 +176,6 @@ class LoginScreen extends StatelessWidget {
                                           HomeScreen.route,
                                         );
                                       } else {
-                                        print('wrong');
-
                                         Scaffold.of(context).showSnackBar(
                                           SnackBar(
                                             content: Text(
@@ -210,9 +207,7 @@ class LoginScreen extends StatelessWidget {
                                   width: 8.0,
                                 ),
                                 GestureDetector(
-                                  onTap: () {
-                                    print('signup');
-                                  },
+                                  onTap: () {},
                                   child: Text(
                                     'Sign Up',
                                     textAlign: TextAlign.center,

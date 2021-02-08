@@ -92,13 +92,6 @@ class MainMenuDrawer extends StatelessWidget {
               icon: Icon(Icons.account_balance_wallet),
               text: 'Wallet',
             ),
-            FlatButton(
-              child: Text('Sgn out'),
-              onPressed: () async {
-                await FirebaseAuth.instance.signOut();
-                Navigator.pushReplacementNamed(context, SplasScreen.route);
-              },
-            )
           ],
         ),
       ),

@@ -1,3 +1,5 @@
+import 'package:asap_challenge_cubit/src/ui/screens/splash_screen/splash_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class AccountDetailsScreen extends StatelessWidget {
@@ -61,7 +63,11 @@ class AccountDetailsScreen extends StatelessWidget {
                         color: Color(0xff1C00CE),
                       ),
                       OutlinedButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await FirebaseAuth.instance.signOut();
+                          Navigator.pushReplacementNamed(
+                              context, SplasScreen.route);
+                        },
                         child: Text(
                           'Logout',
                           style: TextStyle(),

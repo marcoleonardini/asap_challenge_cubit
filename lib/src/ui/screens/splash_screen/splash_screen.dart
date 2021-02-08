@@ -141,7 +141,7 @@ class ButtonsWidget extends StatelessWidget {
       children: [
         SizedBox(
           width: 200,
-          child: FlatButton(
+          child: RaisedButton(
             onPressed: () {
               Navigator.pushReplacementNamed(context, LoginScreen.route);
             },

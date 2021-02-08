@@ -18,6 +18,7 @@ class MainMenuDrawer extends StatelessWidget {
         color: Color(0xff15018E),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBar(
               leading: IconButton(
@@ -56,41 +57,61 @@ class MainMenuDrawer extends StatelessWidget {
                     child: Icon(Icons.person),
                   ),
                 ),
-                SizedBox(width: 24.0)
               ],
             ),
-            SizedBox(height: 24.0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text('Menus'),
-                CupertinoSwitch(
-                  value: true,
-                  onChanged: (value) {},
-                  activeColor: Colors.green,
-                )
-              ],
-            ),
-            _IconTextRow(
-              icon: Icon(Icons.food_bank_rounded),
-              text: 'Ordenes de menus',
-            ),
-            _IconTextRow(
-              icon: Icon(Icons.fastfood),
-              text: 'Elementos de menu',
-            ),
-            Text('My orders'),
-            _IconTextRow(
-              icon: Icon(Icons.shopping_bag_rounded),
-              text: 'New Delivery',
-            ),
-            _IconTextRow(
-              icon: Icon(Icons.delivery_dining),
-              text: 'My Orders',
-            ),
-            _IconTextRow(
-              icon: Icon(Icons.account_balance_wallet),
-              text: 'Wallet',
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 24.0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Menus',
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                      Transform.scale(
+                        scale: 0.75,
+                        child: CupertinoSwitch(
+                          value: true,
+                          onChanged: (value) {},
+                          activeColor: Colors.green,
+                        ),
+                      )
+                    ],
+                  ),
+                  _IconTextRow(
+                    icon: Icon(Icons.food_bank_rounded),
+                    text: 'Ordenes de menus',
+                  ),
+                  _IconTextRow(
+                    icon: Icon(Icons.fastfood),
+                    text: 'Elementos de menu',
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      'My orders',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(fontSize: 16.0),
+                    ),
+                  ),
+                  _IconTextRow(
+                    icon: Icon(Icons.shopping_bag_rounded),
+                    text: 'New Delivery',
+                  ),
+                  _IconTextRow(
+                    icon: Icon(Icons.delivery_dining),
+                    text: 'My Orders',
+                  ),
+                  _IconTextRow(
+                    icon: Icon(Icons.account_balance_wallet),
+                    text: 'Wallet',
+                  ),
+                ],
+              ),
             ),
           ],
         ),
@@ -116,9 +137,9 @@ class _IconTextRow extends StatelessWidget {
       height: 48.0,
       child: Row(
         children: [
-          Expanded(child: icon),
+          icon,
+          SizedBox(width: 16.0),
           Expanded(
-            flex: 3,
             child: Text(text),
           )
         ],

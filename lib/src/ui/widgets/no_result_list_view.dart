@@ -8,6 +8,7 @@ class NoResultsListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: [
         Text(
           'No Results',

@@ -14,6 +14,7 @@ class ResultsListViewWidget extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       child: ListView.separated(
+        physics: BouncingScrollPhysics(),
         separatorBuilder: (_, __) => Divider(
           color: Colors.white,
         ),

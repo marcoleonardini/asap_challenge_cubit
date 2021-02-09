@@ -17,9 +17,7 @@ class AccountDetailsScreen extends StatelessWidget {
           title: Text('Account Details'),
         ),
         body: GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-          },
+          onTap: FocusScope.of(context).unfocus,
           child: Container(
             padding: EdgeInsets.all(24.0),
             width: MediaQuery.of(context).size.width,

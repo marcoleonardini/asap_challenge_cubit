@@ -148,7 +148,6 @@ class _FormSignUpState extends State<FormSignUp> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     isLoading.dispose();
     super.dispose();
   }

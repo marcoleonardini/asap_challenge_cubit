@@ -56,7 +56,7 @@ class HomeScreen extends StatelessWidget {
                             context.read<OrderProvider>().getActiveOrders();
                           },
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 250),
+                            duration: const Duration(milliseconds: 350),
                             curve: Curves.decelerate,
                             decoration: value == 'active'
                                 ? BoxDecoration(
@@ -95,7 +95,7 @@ class HomeScreen extends StatelessWidget {
                             }
                           },
                           child: AnimatedContainer(
-                            duration: const Duration(milliseconds: 250),
+                            duration: const Duration(milliseconds: 350),
                             curve: Curves.decelerate,
                             decoration: value == 'past'
                                 ? BoxDecoration(
@@ -138,7 +138,6 @@ class HomeScreen extends StatelessWidget {
                       final list = typeOrders.value == "active"
                           ? state.order
                           : state.order;
-                      print(list.length);
 
                       widgetReturn = list.isEmpty
                           ? NoResultsListView()

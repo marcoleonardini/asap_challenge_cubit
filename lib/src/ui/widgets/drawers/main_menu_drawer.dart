@@ -52,7 +52,7 @@ class MainMenuDrawer extends StatelessWidget {
                     Navigator.pushNamed(context, AccountDetailsScreen.route);
                   },
                   child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/woman.jpeg'),
+                    backgroundImage: AssetImage('assets/images/woman.jpg'),
                   ),
                 ),
               ],

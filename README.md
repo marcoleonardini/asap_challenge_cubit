@@ -69,6 +69,11 @@ flutter build apk --release
 - OnGeneretaed Routes for navigation
 - 
 
+### Test User accounts
+- As this is a demo app, here is a demo user and pass, also the domains are restricted
+- user: leo@leo.com   pass: 123456
+- user: leonardini@leo.com pass: qwerty
+- you can register new users, with the domain leo.com and gmail.com
 ### Tested on
 - iPhone 6, iOS 12.5.1
 - Samsung A70, Android 10

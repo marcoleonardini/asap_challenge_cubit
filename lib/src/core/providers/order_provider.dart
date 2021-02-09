@@ -5,22 +5,22 @@ import 'package:bloc/bloc.dart';
 part 'order_state.dart';
 
 class OrderProvider extends Cubit<OrderState> {
-  List<OrderModel> activeOrders = [];
-  List<OrderModel> pastOrders = [];
+  List<OrderModel> _activeOrders = [];
+  List<OrderModel> _pastOrders = [];
   OrderProvider() : super(OrderInitial()) {
     refreshActiveOrders();
   }
-  Future<void> getActiveOrders() async {
+  void getActiveOrders() async {
     try {
-      emit(OrderLoaded(activeOrders));
+      emit(OrderLoaded(_activeOrders));
     } on NetworkException {
       emit(OrderError("Couldn't fetch weather. Is the device online?"));
     }
   }
 
-  Future<void> getPastOrders() async {
+  void getPastOrders() async {
     try {
-      emit(OrderLoaded(pastOrders));
+      emit(OrderLoaded(_pastOrders));
     } on NetworkException {
       emit(OrderError("Couldn't fetch weather. Is the device online?"));
     }
@@ -29,8 +29,8 @@ class OrderProvider extends Cubit<OrderState> {
   Future<void> refreshActiveOrders() async {
     try {
       emit(OrderLoading());
-      activeOrders = await OrderMock().getActiveOrders();
-      emit(OrderLoaded(activeOrders));
+      _activeOrders = await OrderMock().getActiveOrders();
+      emit(OrderLoaded(_activeOrders));
     } on NetworkException {
       emit(OrderError("Couldn't fetch weather. Is the device online?"));
     }
@@ -39,10 +39,14 @@ class OrderProvider extends Cubit<OrderState> {
   Future<void> refreshPastOrders() async {
     try {
       emit(OrderLoading());
-      pastOrders = await OrderMock().getPastOrders();
-      emit(OrderLoaded(pastOrders));
+      _pastOrders = await OrderMock().getPastOrders();
+      emit(OrderLoaded(_pastOrders));
     } on NetworkException {
       emit(OrderError("Couldn't fetch weather. Is the device online?"));
     }
+  }
+
+  void cleanOrders() {
+    _pastOrders = _activeOrders = [];
   }
 }

@@ -1,6 +1,7 @@
 import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
+import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -65,6 +66,7 @@ class AccountDetailsScreen extends StatelessWidget {
                       OutlinedButton(
                         onPressed: () async {
                           await FirebaseAuth.instance.signOut();
+                          context.read<OrderProvider>().cleanOrders();
                           return Navigator.pushNamedAndRemoveUntil(
                             context,
                             LoginScreen.route,

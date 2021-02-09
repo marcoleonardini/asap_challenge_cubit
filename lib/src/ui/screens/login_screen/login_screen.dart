@@ -71,7 +71,7 @@ class _BottomMessage extends StatelessWidget {
             const SizedBox(width: 8.0),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, SignUpScreen.route);
+                Navigator.pushReplacementNamed(context, SignUpScreen.route);
               },
               child: const Text(
                 'Sign Up',

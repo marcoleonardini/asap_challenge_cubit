@@ -70,7 +70,7 @@ class _BottomMessage extends StatelessWidget {
             const SizedBox(width: 8.0),
             GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, LoginScreen.route);
+                Navigator.pushReplacementNamed(context, LoginScreen.route);
               },
               child: const Text(
                 'Log In',

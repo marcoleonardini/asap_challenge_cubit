@@ -16,7 +16,7 @@ Flutter App Challenge
 - Android minSdkVersion 21
 - iOS  minVersion 11.0
 
-
+------
 ### Todo List
 - [x] Implementar el patrón cubit o bloc
 - [x] Componentizar widgets
@@ -29,6 +29,7 @@ Flutter App Challenge
 - [x] El contenido lo puedes mockear creando listas hardcore, archivos json locales o apoyandote con firebase realtime database
 - [x] Menú; Que se oculte y habilite; No es necesario que su contenido tenga interacción, solo trabajar el l&f
 
+------
 ### Installation
 
 
@@ -57,7 +58,7 @@ flutter build apk --release
 [Download Apk](https://github.com/marcoleonardini/asap_challenge_cubit/blob/master/sources/app-release.apk)
 
 
-
+------
 ### What was used in this app:
 
 - Cubit for state managment
@@ -71,8 +72,11 @@ flutter build apk --release
 ### Tested on
 - iPhone 6, iOS 12.5.1
 - Samsung A70, Android 10
+------
+#### Video Demo
+[Download Video demo](https://github.com/marcoleonardini/asap_challenge_cubit/blob/master/sources/video.mp4)
 
-#### [Video demo](https://github.com/marcoleonardini/asap_challenge_cubit/blob/master/sources/video.mp4)
+------
 ### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

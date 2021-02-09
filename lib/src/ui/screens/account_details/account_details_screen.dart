@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,9 +11,9 @@ class AccountDetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff15018E),
+        backgroundColor: AppColors.primaryColor,
         appBar: AppBar(
-          backgroundColor: Color(0xff391B91),
+          backgroundColor: AppColors.secondaryColor,
           elevation: 0.0,
           title: Text('Account Details'),
         ),
@@ -59,7 +60,7 @@ class AccountDetailsScreen extends StatelessWidget {
                         onPressed: () {},
                         child: Text('Verify Email'),
                         shape: StadiumBorder(),
-                        color: Color(0xff1C00CE),
+                        color: AppColors.blueButtonColor,
                       ),
                       OutlinedButton(
                         onPressed: () async {
@@ -76,7 +77,7 @@ class AccountDetailsScreen extends StatelessWidget {
                         ),
                         style: OutlinedButton.styleFrom(
                           shape: StadiumBorder(),
-                          side: BorderSide(color: Color(0xffffffff)),
+                          side: BorderSide(color: Colors.white),
                           padding: EdgeInsets.symmetric(horizontal: 36.0),
                         ),
                       )
@@ -115,7 +116,7 @@ class CustomFilledTextField extends StatelessWidget {
     var outlineInputBorderColor = OutlineInputBorder(
       borderRadius: BorderRadius.circular(64.0),
       borderSide: BorderSide(
-        color: Color(0xff391B91),
+        color: AppColors.secondaryColor,
       ),
     );
     return Padding(
@@ -125,7 +126,7 @@ class CustomFilledTextField extends StatelessWidget {
         cursorColor: Colors.white,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(left: 24.0),
-          fillColor: Color(0xff391B91),
+          fillColor: AppColors.secondaryColor,
           border: outlineInputBorderColor,
           enabledBorder: outlineInputBorderColor,
           focusedBorder: outlineInputBorderColor,

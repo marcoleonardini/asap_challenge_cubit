@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/core/services/firebase/auh_firebase.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/utils/text_field_validators.dart';
@@ -103,7 +104,7 @@ class _FormSignUpState extends State<FormSignUp> {
                   child: RaisedButton(
                     onPressed: () => _doSignUp(context: context),
                     child: Text('Sign Up'),
-                    color: Color(0xff1C00CE),
+                    color: AppColors.blueButtonColor,
                     shape: StadiumBorder(),
                   ),
                 ),

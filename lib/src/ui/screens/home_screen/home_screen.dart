@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/result_listwiew_widget.dart';
@@ -12,9 +13,9 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff15018E),
+      backgroundColor: AppColors.primaryColor,
       appBar: AppBar(
-        backgroundColor: Color(0xff391B91),
+        backgroundColor: AppColors.secondaryColor,
         elevation: 0.0,
       ),
       drawerScrimColor: Colors.white30,
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
                   horizontal: 24.0,
                 ),
                 decoration: BoxDecoration(
-                  color: Color(0xff391B91),
+                  color: AppColors.secondaryColor,
                   borderRadius: BorderRadius.all(
                     Radius.circular(28),
                   ),

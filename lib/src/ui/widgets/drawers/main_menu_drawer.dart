@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/account_details/account_details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,7 @@ class MainMenuDrawer extends StatelessWidget {
       child: Container(
         height: 250,
         alignment: Alignment.topLeft,
-        color: Color(0xff15018E),
+        color: AppColors.primaryColor,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +45,7 @@ class MainMenuDrawer extends StatelessWidget {
                   ),
                 ],
               ),
-              backgroundColor: Color(0xff391B91),
+              backgroundColor: AppColors.secondaryColor,
               elevation: 0.0,
               actions: [
                 FlatButton(

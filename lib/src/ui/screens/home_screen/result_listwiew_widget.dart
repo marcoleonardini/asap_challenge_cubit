@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/core/models/order.model.dart';
 import 'package:flutter/material.dart';
 
@@ -62,7 +63,7 @@ class ResultsListViewWidget extends StatelessWidget {
                                 color: Colors.white,
                               ),
                             ),
-                            color: Color(0xff1C00CE),
+                            color: AppColors.blueButtonColor,
                             shape: StadiumBorder(),
                           ),
                         ],

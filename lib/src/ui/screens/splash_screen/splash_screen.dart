@@ -1,3 +1,4 @@
+import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/home_screen/home_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/login_screen/login_screen.dart';
 import 'package:asap_challenge_cubit/src/ui/utils/custom_linear_gradient.dart';
@@ -141,7 +142,7 @@ class ButtonsWidget extends StatelessWidget {
               Navigator.pushReplacementNamed(context, LoginScreen.route);
             },
             child: Text('Login'),
-            color: Color(0xff1C00CE),
+            color: AppColors.blueButtonColor,
             shape: StadiumBorder(),
           ),
         ),
@@ -159,7 +160,6 @@ class ButtonsWidget extends StatelessWidget {
               'Sign Up',
               style: TextStyle(color: Colors.white),
             ),
-            //textColor: Color(0xffffffff),
           ),
         ),
       ],

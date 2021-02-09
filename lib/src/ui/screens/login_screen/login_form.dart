@@ -99,20 +99,19 @@ class _FormLoginState extends State<FormLogin> {
                     style: TextStyle(fontSize: 12.0),
                   ),
                 ),
-                SizedBox(
-                  width: 200,
-                  child: RaisedButton(
-                    onPressed: () => _doLogin(context: context),
-                    child: Text('Login'),
-                    color: AppColors.blueButtonColor,
-                    shape: StadiumBorder(),
-                  ),
-                ),
                 ValueListenableBuilder(
                   valueListenable: isLoading,
                   builder: (context, value, _) {
                     if (value) return CircularProgressIndicator();
-                    return SizedBox.shrink();
+                    return SizedBox(
+                      width: 200,
+                      child: RaisedButton(
+                        onPressed: () => _doLogin(context: context),
+                        child: Text('Login'),
+                        color: AppColors.blueButtonColor,
+                        shape: StadiumBorder(),
+                      ),
+                    );
                   },
                 )
               ],

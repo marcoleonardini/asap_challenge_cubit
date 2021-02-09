@@ -99,20 +99,19 @@ class _FormSignUpState extends State<FormSignUp> {
                     style: TextStyle(fontSize: 12.0),
                   ),
                 ),
-                SizedBox(
-                  width: 200,
-                  child: RaisedButton(
-                    onPressed: () => _doSignUp(context: context),
-                    child: Text('Sign Up'),
-                    color: AppColors.blueButtonColor,
-                    shape: StadiumBorder(),
-                  ),
-                ),
                 ValueListenableBuilder(
                   valueListenable: isLoading,
                   builder: (context, value, _) {
                     if (value) return CircularProgressIndicator();
-                    return SizedBox.shrink();
+                    return SizedBox(
+                      width: 200,
+                      child: RaisedButton(
+                        onPressed: () => _doSignUp(context: context),
+                        child: Text('Sign Up'),
+                        color: AppColors.blueButtonColor,
+                        shape: StadiumBorder(),
+                      ),
+                    );
                   },
                 )
               ],

@@ -7,7 +7,7 @@ class OrderMock implements OrderAbstract {
   Future<List<OrderModel>> getActiveOrders() async {
     await Future.delayed(const Duration(milliseconds: 1500));
     if (math.Random().nextDouble() * 100 > 15) {
-      final List<OrderModel> list =
+      final list =
           _dataOrders.where((element) => element.status == 'Accepted').toList();
       list.shuffle();
 
@@ -20,7 +20,7 @@ class OrderMock implements OrderAbstract {
   Future<List<OrderModel>> getPastOrders() async {
     await Future.delayed(const Duration(milliseconds: 1500));
     if (math.Random().nextDouble() * 100 > 15) {
-      final List<OrderModel> list = _dataOrders
+      final list = _dataOrders
           .where((element) => element.status == 'Delivered')
           .toList();
       list.shuffle();

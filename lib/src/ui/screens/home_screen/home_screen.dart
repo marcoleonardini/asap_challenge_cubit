@@ -24,10 +24,12 @@ class HomeScreen extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         child: RefreshIndicator(
           onRefresh: () async {
-            if (typeOrders.value == 'active')
-              context.read<OrderProvider>().refreshActiveOrders();
-            if (typeOrders.value == 'past')
-              context.read<OrderProvider>().refreshPastOrders();
+            if (typeOrders.value == 'active') {
+              await context.read<OrderProvider>().refreshActiveOrders();
+            }
+            if (typeOrders.value == 'past') {
+              await context.read<OrderProvider>().refreshPastOrders();
+            }
 
             return Future.value(true);
           },
@@ -88,7 +90,7 @@ class HomeScreen extends StatelessWidget {
                     } else if (state is OrderLoading) {
                       widgetReturn = Center(child: CircularProgressIndicator());
                     } else if (state is OrderLoaded) {
-                      final list = typeOrders.value == "active"
+                      final list = typeOrders.value == 'active'
                           ? state.order
                           : state.order;
 

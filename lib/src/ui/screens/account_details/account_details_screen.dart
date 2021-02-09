@@ -65,7 +65,7 @@ class AccountDetailsScreen extends StatelessWidget {
                       OutlinedButton(
                         onPressed: () async {
                           await FirebaseAuth.instance.signOut();
-                          Navigator.pushNamedAndRemoveUntil(
+                          return Navigator.pushNamedAndRemoveUntil(
                             context,
                             LoginScreen.route,
                             ModalRoute.withName(LoginScreen.route),

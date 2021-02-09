@@ -75,7 +75,7 @@ class _BottomMessage extends StatelessWidget {
               child: const Text(
                 'Log In',
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 10.0,
                   fontWeight: FontWeight.bold,
                 ),

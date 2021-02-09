@@ -132,7 +132,7 @@ class _FormLoginState extends State<FormLogin> {
         email: email,
         password: password,
       )) {
-        Navigator.pushReplacementNamed(
+        await Navigator.pushReplacementNamed(
           context,
           HomeScreen.route,
         );

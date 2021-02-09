@@ -132,7 +132,7 @@ class _FormSignUpState extends State<FormSignUp> {
         email: email,
         password: password,
       )) {
-        Navigator.pushReplacementNamed(
+        await Navigator.pushReplacementNamed(
           context,
           HomeScreen.route,
         );

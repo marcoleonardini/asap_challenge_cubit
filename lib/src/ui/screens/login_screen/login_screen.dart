@@ -76,7 +76,7 @@ class _BottomMessage extends StatelessWidget {
               child: const Text(
                 'Sign Up',
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 10.0,
                   fontWeight: FontWeight.bold,
                 ),

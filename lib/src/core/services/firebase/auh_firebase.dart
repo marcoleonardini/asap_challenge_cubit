@@ -5,7 +5,7 @@ class AuthFirebase implements AuthAbstract {
   @override
   Future<bool> logIn({String email, String password}) async {
     try {
-      FirebaseAuth auth = FirebaseAuth.instance;
+      var auth = FirebaseAuth.instance;
 
       await auth.signInWithEmailAndPassword(
         email: email,
@@ -25,7 +25,7 @@ class AuthFirebase implements AuthAbstract {
   @override
   Future<bool> signUp({String email, String password}) async {
     try {
-      FirebaseAuth auth = FirebaseAuth.instance;
+      var auth = FirebaseAuth.instance;
 
       await auth.createUserWithEmailAndPassword(
         email: email,

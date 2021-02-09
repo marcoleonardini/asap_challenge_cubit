@@ -1,16 +1,71 @@
-# asap_challenge_cubit
+# ASAP Challenge
 
-A new Flutter project.
+Flutter App Challenge
+### Flutter version used
 
-## Getting Started
+```bash
 
-This project is a starting point for a Flutter application.
+ Flutter 1.22.6 • channel stable • https://github.com/flutter/flutter.git
+ Framework • revision 9b2d32b605 (3 weeks ago) • 2021-01-22 14:36:39 -0800
+ Engine • revision 2f0af37152
+ Tools • Dart 2.10.5
+```
+- It's recomended to use the same version and channel
 
-A few resources to get you started if this is your first Flutter project:
+### Devices minimun SDKs
+- Android minSdkVersion 21
+- iOS  minVersion 11.0
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Todo List
+- [x] Implementar el patrón cubit o bloc
+- [x] Componentizar widgets
+- [x] Login & signup; Implementar Firebase authentication 
+- [x] Login & signup; Validar formulario
+- [x] Login; Si el usuario está logueado que la aplicación lo lleve directo a la pantalla 3 o 4 
+- [x] Lista de órdenes; Implementar el pull to refresh
+- [x] Lista de órdenes; No es necesario que los botones accepted y paid tenga interacción; solo pintarlos
+- [x] Lista de órdenes; Active Order y Past Order si deben interactuar o listar contenido de forma dinámica
+- [x] El contenido lo puedes mockear creando listas hardcore, archivos json locales o apoyandote con firebase realtime database
+- [x] Menú; Que se oculte y habilite; No es necesario que su contenido tenga interacción, solo trabajar el l&f
+
+### Installation
+
+
+- Clone this repository and go into the folder cloned.
+- Conect a device in order to run rhe app.
+```bash
+flutter pub get
+flutter run
+```
+
+- Run in mode release
+```bash
+flutter run --release
+```
+
+- For iOS target, install pods
+```
+cd ios
+pod install
+```
+
+### What was used in this app:
+
+- Cubit for state managment
+- Hard coded data in orders
+- Firebase authentication and session managment
+- Pull refresh
+- Basic Animations
+- OnGeneretaed Routes for navigation
+- 
+
+### Tested on
+- iPhone 6, iOS 12.5.1
+- Samsung A70, Android 10
+
+#### [Video demo](https://github.com/marcoleonardini/asap_challenge_cubit/sources/video.mp4)
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.

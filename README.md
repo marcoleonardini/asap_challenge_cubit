@@ -50,6 +50,14 @@ cd ios
 pod install
 ```
 
+### Android Apk - release mode
+```
+flutter build apk --release
+```
+[Download Apk](https://github.com/marcoleonardini/asap_challenge_cubit/blob/master/sources/app-release.apk)
+
+
+
 ### What was used in this app:
 
 - Cubit for state managment
@@ -64,7 +72,7 @@ pod install
 - iPhone 6, iOS 12.5.1
 - Samsung A70, Android 10
 
-#### [Video demo](https://github.com/marcoleonardini/asap_challenge_cubit/sources/video.mp4)
+#### [Video demo](https://github.com/marcoleonardini/asap_challenge_cubit/blob/master/sources/video.mp4)
 ### Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

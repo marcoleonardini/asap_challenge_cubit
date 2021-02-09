@@ -4,8 +4,9 @@ import 'dart:math' as math show Random;
 
 class OrderMock implements OrderAbstract {
   @override
-  Future<List<OrderModel>> getActiveOrders() {
-    if (math.Random().nextDouble() * 100 > 25) {
+  Future<List<OrderModel>> getActiveOrders() async {
+    await Future.delayed(const Duration(milliseconds: 1500));
+    if (math.Random().nextDouble() * 100 > 15) {
       final List<OrderModel> list =
           _dataOrders.where((element) => element.status == 'Accepted').toList();
       list.shuffle();
@@ -16,8 +17,9 @@ class OrderMock implements OrderAbstract {
   }
 
   @override
-  Future<List<OrderModel>> getPastOrders() {
-    if (math.Random().nextDouble() * 100 > 25) {
+  Future<List<OrderModel>> getPastOrders() async {
+    await Future.delayed(const Duration(milliseconds: 1500));
+    if (math.Random().nextDouble() * 100 > 15) {
       final List<OrderModel> list = _dataOrders
           .where((element) => element.status == 'Delivered')
           .toList();
@@ -87,3 +89,5 @@ class OrderMock implements OrderAbstract {
     )
   ];
 }
+
+class NetworkException implements Exception {}

@@ -23,11 +23,10 @@ class HomeScreen extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         child: RefreshIndicator(
           onRefresh: () async {
-            await Future.delayed(const Duration(milliseconds: 1500));
             if (typeOrders.value == 'active')
-              context.read<OrderProvider>().getActiveOrders();
+              context.read<OrderProvider>().refreshActiveOrders();
             if (typeOrders.value == 'past')
-              context.read<OrderProvider>().getPastOrders();
+              context.read<OrderProvider>().refreshPastOrders();
 
             return Future.value(true);
           },
@@ -128,16 +127,29 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               Expanded(
-                child: BlocBuilder<OrderProvider, List>(
+                child: BlocBuilder<OrderProvider, OrderState>(
                   builder: (context, state) {
-                    return AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 450),
-                      child: state.isEmpty
+                    var widgetReturn;
+                    if (state is OrderInitial) {
+                      widgetReturn = Center(child: CircularProgressIndicator());
+                    } else if (state is OrderLoading) {
+                      widgetReturn = Center(child: CircularProgressIndicator());
+                    } else if (state is OrderLoaded) {
+                      final list = typeOrders.value == "active"
+                          ? state.order
+                          : state.order;
+                      print(list.length);
+
+                      widgetReturn = list.isEmpty
                           ? NoResultsListView()
                           : ResultsListViewWidget(
                               key: UniqueKey(),
-                              listOrders: state,
-                            ),
+                              listOrders: list,
+                            );
+                    }
+                    return AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 450),
+                      child: widgetReturn,
                     );
                   },
                 ),

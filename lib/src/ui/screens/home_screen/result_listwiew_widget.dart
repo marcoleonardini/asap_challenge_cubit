@@ -1,5 +1,5 @@
 import 'package:asap_challenge_cubit/src/core/const/app_colors.dart';
-import 'package:asap_challenge_cubit/src/core/models/order.model.dart';
+import 'package:asap_challenge_cubit/src/core/models/order_model.dart';
 import 'package:flutter/material.dart';
 
 class ResultsListViewWidget extends StatelessWidget {

@@ -1,9 +1,11 @@
-import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:asap_challenge_cubit/src/core/providers/order_provider.dart';
 import 'package:asap_challenge_cubit/src/core/config/routes.dart';
 import 'package:asap_challenge_cubit/src/ui/screens/splash_screen/splash_screen.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,16 +24,16 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          buttonTheme: ButtonThemeData(
+          buttonTheme: const ButtonThemeData(
             buttonColor: Colors.black, //  <-- dark color
             textTheme: ButtonTextTheme
                 .primary, //  <-- this auto selects the right color
           ),
-          iconTheme: IconThemeData(color: Colors.white70),
+          iconTheme: const IconThemeData(color: Colors.white70),
           textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(primary: Colors.white70),
           ),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             bodyText1: TextStyle(),
             bodyText2: TextStyle(),
             headline2: TextStyle(),

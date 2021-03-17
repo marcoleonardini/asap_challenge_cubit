@@ -90,20 +90,29 @@ class HomeScreen extends StatelessWidget {
                 child: BlocBuilder<OrderProvider, OrderState>(
                   builder: (context, state) {
                     var widgetReturn;
-                    if (state is OrderInitial) {
-                      widgetReturn = Center(child: CircularProgressIndicator());
-                    } else if (state is OrderLoading) {
-                      widgetReturn = Center(child: CircularProgressIndicator());
-                    } else if (state is OrderLoaded) {
-                      final list = state.order;
+                    state.map(
+                      initial: (_) {
+                        widgetReturn =
+                            Center(child: CircularProgressIndicator());
+                      },
+                      loading: (_) {
+                        widgetReturn =
+                            Center(child: CircularProgressIndicator());
+                      },
+                      loaded: (state) {
+                        final list = state.ordersList;
+                        widgetReturn = list.isEmpty
+                            ? NoResultsListView()
+                            : ResultsListViewWidget(
+                                key: UniqueKey(),
+                                listOrders: list,
+                              );
+                      },
+                      error: (_) {
+                        widgetReturn = Text('error');
+                      },
+                    );
 
-                      widgetReturn = list.isEmpty
-                          ? NoResultsListView()
-                          : ResultsListViewWidget(
-                              key: UniqueKey(),
-                              listOrders: list,
-                            );
-                    }
                     return AnimatedSwitcher(
                       duration: const Duration(milliseconds: 450),
                       child: widgetReturn,

@@ -1,4 +1,4 @@
-import 'package:asap_challenge_cubit/src/core/models/order.model.dart';
+import 'package:asap_challenge_cubit/src/core/models/order_model.dart';
 import 'package:asap_challenge_cubit/src/core/services/abstract/order_abstract.dart';
 import 'dart:math' as math show Random;
 import 'fake_order_data.dart';
